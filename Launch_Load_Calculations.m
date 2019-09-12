@@ -86,32 +86,6 @@ if fn(1) <= 50
     disp('Further analysis is required to determine launch capabilities')
 end
 
-% k = E*t/(1-nu^2); % Tug stifness (N/m)
-% A_dy = [k/ma -k/ma 0; -k/ma 2*k/ma -k/ma; 0 -2*k/ma 2*k/ma]; 
-% % Dynamic matrix to solve for initial generalized coordinate
-% lambda = eig(A_dy); % Eigenvalues of dynamic matrix
-% q_i = real(lambda(1)); % Initial generalized coordinate
-% q_dot_i = real(lambda(2)); % Initial value of differntiated generalized coordinate
-
-% n = length(c);
-% x = 0:0.1:L; % Different points across the Tug
-% t = linspace(0,100,length(x)); % time of flight (s)
-% m = length(t);
-% y = zeros(n*m,m);
-% ik = 0;
-% 
-% for j = 1:n
-%     f_ni = (c(j)^2/L^2)*sqrt(E*I/ma); % Natural frequency (Hz)
-%     omega_n = 2*pi*f_ni; % Circular natural frequency (Hz)
-%     for a = 1:m
-%     phi = cosh(c(j)*x(a)/L) - cos(c(j)*x(a)/L) - d(j)*(sinh(c(j)*x(a)/L) - sin(c(j)*x(a)/L)); % Modeshape (m)
-%         for ij = 1:m
-%         q = (q_dot_i/omega_n)*sin(omega_n*t(ij)) + q_i*cos(omega_n*t(ij)); % generalized coordinate
-%         y(ik*m + a,ij) = q*phi;
-%         end
-%     end
-%     ik = ik + 1;
-% end
 
 
 
